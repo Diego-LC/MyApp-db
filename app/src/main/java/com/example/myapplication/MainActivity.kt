@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         btnVentanaPrincipal.setOnClickListener {
             text1.text = "Lista de usuarios en la base de datos"
             callApi()
-            Log.d("D", "Hello")
         }
 
 
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val dataList = response.body() ?: emptyList()
 
-                    Log.d("d","no sé")
+                    Log.d("AppMain","Respuesta exitosa")
 
                     // Crea una lista de cadenas de texto que contiene nombre y apellido
                     val items = dataList.map { "rut: ${it.rut}, ${it.nombre} ${it.apellido}" }
@@ -66,23 +65,6 @@ class MainActivity : AppCompatActivity() {
                 Log.e("MainActivity", "Error en la solicitud: ${t.message}")
             }
         })
-    }
-
-    private fun listaEl(){
-        // Define una lista de elementos que deseas mostrar en el ListView
-        val dataList = arrayListOf(
-            "com.example.myapplication.Elemento 1",
-            "com.example.myapplication.Elemento 2",
-            "com.example.myapplication.Elemento 3",
-            "com.example.myapplication.Elemento 4",
-            "com.example.myapplication.Elemento 5"
-        )
-
-        // Crea un adaptador para enlazar la lista con el ListView
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dataList)
-
-        // Establece el adaptador en el ListView
-//        listView.adapter = adapter
 
     }
 }
