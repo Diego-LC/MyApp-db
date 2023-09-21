@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="ListTitle">Lista de tareas</string>
+    <string name="get_info">Obtener Información</string>
+</resources>
